@@ -28,10 +28,10 @@ app.use(logger);
 
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/users', usersRouter)
+app.use('/api/users', usersRouter)
 
 app.get('/api/health', (req, res) => {
-  res.send('Server is healthy.')
+  res.json({ message: 'Server is healthy' })
 })
 
 app.listen(PORT, () => { console.log(`listening and serving on port ${PORT}`) })
